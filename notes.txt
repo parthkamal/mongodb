@@ -1,0 +1,94 @@
+// mongo db basic command
+
+
+1. mongodb is a document database designed for ease of development and scaling. 
+2. it is intuitive and easy to use Nosql database.
+3. Available as community and enterprise edition. 
+4. however, the community edition is itself very powerful. 
+
+mongo - mongo is the command line shell that connects to a specific instiance of mongod
+mongod - mongod is the "mongo Daemon" it's basically the host process for the database. 
+
+
+mongodb - collection / mysql - tables
+
+we are using mongosh
+
+list the datbase - show dbs 
+create or switch to a new database - use dbName 
+view current database - db
+show the collections present inside the database - show collections 
+create collections - db.createCollection('collection_name_to_be_created')
+delete collections - db.{collection_name}.drop()
+
+mongodb row operations
+
+//insert one row - 
+
+db.{collection_name}.insertOne({ 
+    'name': 'parth kamal', 
+    'age' : 18
+})
+
+//insert many rows simulaneously
+db.comments.insertMany(
+    [
+        { 
+            'name': 'parth kamal', 
+            'age' : 18
+        },
+        { 
+            'name': 'manvi kamal', 
+            'age' : 20,
+        },
+])
+
+
+//show all rows in a collection 
+db.{collection_name}.find()
+
+//show all rows in a collection (prettified)
+db.{collection_name}.find().pretty()
+
+
+//find a user whose age is greater than 18
+db.{collection_name}.find({age: {$gt: 18}});
+
+//limit the number of rows in output
+db.comments.find().limit(2)
+
+
+//count the number of rows in the output
+db.comments.find().count()
+
+
+//find users whose id is either 5 or 3241
+db.{collection_name}.find({_id: {$in: [5,3241]}});
+
+//update a row matching first (ie , first argument is search filter in the function )
+db.comments.updateOne({lang: 'javascript'}, {$set:{ name: 'new user' , age: 34}})
+
+//update many row
+
+
+all the activities are being done in mongosh
+
+
+MongoDB Atlas and MongoDB Campus are two different offerings by MongoDB Inc.
+
+1. MongoDB Atlas: MongoDB Atlas is a fully managed cloud database service provided by MongoDB Inc. It allows you to deploy, scale, and manage MongoDB databases in the cloud. With MongoDB Atlas, you can easily create and configure MongoDB clusters, monitor performance, automate backups, and secure your data. It takes care of infrastructure provisioning, database administration, and maintenance tasks, allowing you to focus on developing your applications. (ye wala humlog cloud me use karte hai)
+
+2. MongoDB Campus: MongoDB Campus is an online learning platform provided by MongoDB Inc. It offers a variety of resources and educational content to help developers and administrators learn and enhance their skills with MongoDB. MongoDB Campus provides video tutorials, documentation, online courses, webinars, and other learning materials to support users in understanding MongoDB's features, best practices, and development techniques. (gui interface joki local database banane me madad karta hai)
+
+4. MongoDB Shell (mongosh): The MongoDB Shell (mongosh) is an interactive command-line interface that allows you to interact with MongoDB databases and perform various operations. 
+
+In summary, MongoDB Atlas is a cloud-based database service for deploying and managing MongoDB databases, while MongoDB Campus is an educational platform for learning MongoDB through tutorials, courses, and other resources.
+
+
+
+
+
+
+
+
+

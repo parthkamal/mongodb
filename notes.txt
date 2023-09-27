@@ -84,11 +84,3 @@ MongoDB Atlas and MongoDB Campus are two different offerings by MongoDB Inc.
 
 In summary, MongoDB Atlas is a cloud-based database service for deploying and managing MongoDB databases, while MongoDB Campus is an educational platform for learning MongoDB through tutorials, courses, and other resources.
 
-
-
-
-
-
-
-
-
